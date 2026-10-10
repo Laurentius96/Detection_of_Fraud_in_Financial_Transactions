@@ -6,10 +6,10 @@
 <p align="center">
   <a href="#-overview">Overview</a> •
   <a href="#-objective">Objective</a> •
-  <a href="#-technologies-used">Technologies</a> •
+  <a href="#%EF%B8%8F-technologies-used">Technologies</a> •
   <a href="#-project-structure">Project Structure</a> •
   <a href="#-data-pipeline">Data Pipeline</a> •
-  <a href="#-implemented-features">Features</a> •
+  <a href="#%EF%B8%8F-implemented-features">Features</a> •
   <a href="#-results-and-insights">Results & Insights</a> •
   <a href="#-how-to-use">How to Use</a> •
   <a href="#-next-steps">Next Steps</a> •
