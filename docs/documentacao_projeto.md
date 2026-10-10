@@ -137,7 +137,7 @@ Total      →  590.540
 **Resultados:**
 | DataFrame | % Nulos Geral | Pior Coluna | % Nulos |
 |---|---|---|---|
-| train_transaction | ~48% | dist2 | 93,6% |
+| train_transaction | 41,1% | dist2 | 93,6% |
 | train_identity | ~60% | id_24 | 96,7% |
 
 **Regra de decisão definida:**
@@ -160,13 +160,13 @@ Total      →  590.540
 **O que foi feito:**
 - Função `memoria_atual()`: diagnóstico de memória antes da otimização
 - Função `otimizar_memoria()`: downcast de int/float + conversão object→category
-- Função `converter_str_category()`: correção para tipo `str` do pandas 4
+- Função `converter_str_category()`: correção para tipo `str` do pandas 3
 
 **Conceitos aprendidos:**
 - Pandas carrega int64/float64 por padrão (conservador)
 - `downcast='integer'` testa int8 → int16 → int32 automaticamente
 - `category` guarda dicionário + índices inteiros (eficiente para baixa cardinalidade)
-- `object` vs `str` no pandas 4 (breaking change)
+- `object` vs `str` no pandas 3 (breaking change)
 - `category` não vale a pena para alta cardinalidade (> 50% únicos)
 
 **Resultados:**
@@ -176,7 +176,7 @@ Total      →  590.540
 | train_identity | 143 MB | ~120 MB | ~16% (após correção str) |
 
 **Warning identificado:**
-- Pandas 4: `str` dtype ≠ `object` dtype → `select_dtypes(include='object')` não captura `str`
+- Pandas 3: `str` dtype ≠ `object` dtype → `select_dtypes(include='object')` não captura `str`
 - Solução: verificar `str(df[col].dtype) == 'string'` explicitamente
 
 ---
@@ -240,7 +240,7 @@ Total      →  590.540
 | Data | Passo | Bug | Causa | Solução |
 |---|---|---|---|---|
 | 02/04/2026 | 5 | `.query('nulos' > 0)` → TypeError | String comparada com int fora do query | `.query('nulos > 0')` |
-| 02/04/2026 | 6 | Colunas `str` não convertidas para `category` | Pandas 4: `str` ≠ `object` | Verificar `str(dtype) == 'string'` explicitamente |
+| 02/04/2026 | 6 | Colunas `str` não convertidas para `category` | Pandas 3: `str` ≠ `object` | Verificar `str(dtype) == 'string'` explicitamente |
 
 ---
 
@@ -256,4 +256,4 @@ Total      →  590.540
 | -999 em árvores | 5 | Árvores aprendem ausência; 0 pode ser valor real |
 | Downcast de tipos | 6 | int64→int8/16/32; float64→float32 |
 | object vs category | 6 | Category: dicionário + índices inteiros |
-| str vs object pandas 4 | 6 | Breaking change: tratar separadamente |
+| str vs object pandas 3 | 6 | Breaking change: tratar separadamente |
