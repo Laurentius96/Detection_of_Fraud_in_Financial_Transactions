@@ -197,8 +197,8 @@ The main goal is to build a model capable of predicting whether a transaction is
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ieee-fraud-detection.git
-cd ieee-fraud-detection
+git clone https://github.com/Laurentius96/Detection_of_Fraud_in_Financial_Transactions.git
+cd Detection_of_Fraud_in_Financial_Transactions/fraud-detection-ieee
 ```
 
 ### 2. Install dependencies
@@ -229,6 +229,18 @@ jupyter notebook notebooks/ieee_fraud_detection.ipynb
 - [ ] Train baseline and LightGBM models (Steps 10–11)
 - [ ] Evaluate with AUC-ROC and fraud-specific metrics (Step 12)
 - [ ] Submit to Kaggle and analyze public leaderboard score (Steps 14–15)
+
+---
+
+## 🤝 Contributing
+
+Contributions, ideas and feedback are welcome!
+
+- 🐛 **Found a bug or something unclear?** [Open an issue](https://github.com/Laurentius96/Detection_of_Fraud_in_Financial_Transactions/issues/new) describing what happened and how to reproduce it.
+- 💡 **Have an idea or a question?** [Open an issue](https://github.com/Laurentius96/Detection_of_Fraud_in_Financial_Transactions/issues/new) and tell me about it.
+- 🔧 **Want to propose a fix?** Fork the repository, create a branch (`git checkout -b fix/short-description`), commit your changes and open a pull request explaining what changed and why.
+
+By contributing, you agree that your contribution is shared under the same license as this project.
 
 ---
 
